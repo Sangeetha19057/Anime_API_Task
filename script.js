@@ -167,7 +167,7 @@ const header_section = document.createElement("div");
 header_section.innerHTML = `
     <div class="section_box">
        <img
-          src="https://freepikpsd.com/media/2019/10/anime-transparent-gif-4-Free-PNG-Images-Transparent.png"
+          src="images/anime_girl.png"
           alt="anime"
           class="mosque"
         />
