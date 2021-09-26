@@ -111,57 +111,82 @@ function init() {
 init();
 
 // footer script
-const footer = document.createElement("div");
-// const footer_box=document.cre
-footer.innerHTML = `
-<footer id="contact_us">
-<div class="container">
-            <div class="sec aboutus">
-                <h2>About Us</h2>
-                <p> Hello everyone! This project is a simple Anime search website redesign project. I hope you enjoy. Thanks! Searching order by alphabet name A to Z.</p>
-                    <ul class="sci">
+const footer_box = document.createElement("div");
+
+const footer_tag = document.createElement("footer");
+footer_tag.setAttribute("id", "contact_us");
+
+// creating div container
+const footer_div_container = document.createElement("div");
+footer_div_container.setAttribute("class", "container");
+
+// creating sec abouts
+const sec_about_us = document.createElement("div");
+sec_about_us.classList.add("sec", "aboutus");
+
+const sec_about_us_h2 = document.createElement("h2");
+sec_about_us_h2.innerHTML = "About Us";
+
+const sec_about_us_p = document.createElement("p");
+sec_about_us_p.innerHTML =
+  "Hello everyone! This project is a simple Anime search website redesign project. I hope you enjoy. Thanks! Searching order by alphabet name A to Z.";
+
+const sec_about_us_sci_icon = document.createElement("ul");
+sec_about_us_sci_icon.setAttribute("class", "sci");
+sec_about_us_sci_icon.innerHTML = ` 
                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                    </ul>
-            </div>
-            <div class="sec quickLinks">
-                <h2>Quick Links</h2>
-                <ul>
+                        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>`;
+
+sec_about_us.append(sec_about_us_h2, sec_about_us_p, sec_about_us_sci_icon);
+
+// creating quicklinks
+const sec_quickLinks = document.createElement("div");
+sec_quickLinks.classList.add("sec", "quickLinks");
+
+const sec_quickLinks_h2 = document.createElement("h2");
+sec_quickLinks_h2.innerHTML = "Quick Links";
+
+const sec_quickLinks_ul = document.createElement("ul");
+sec_quickLinks_ul.innerHTML = `
                     <li><a href="#">Anime online</a></li>
                     <li><a href="#">Watch anime</a></li>
                     <li><a href="#">animefrenzy.net</a></li>
                     <li><a href="#">Anime Frenzy</a></li>
                     <li><a href="#">4anime.to Official</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="sec contact">
-                <h2>Contact Info</h2>
-                <ul class="info">
-                    <li>
-                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                        <span>647 Linda Street <br> Phoenixville, PA 191460,<br>USA</USA></span>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                       <p><a href="tel:12345678900">+1 234 567 8900</a><br>
-                          <a href="tel:12345678900">+1 234 567 8911</a></p>
-                    </li>
-                    <li>
-                        <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <p><a href="mailto:Knowmore@gmail.com">Anime@gmail.com</a></p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <div class="copyrightText">
-        <p>Copyright © 2021 <span class="copyright_name">Sangeetha.</span></p>
-    </div>
-`;
-document.querySelector(".footer_container").append(footer);
+                    <li><a href="#">Contact</a></li>`;
+sec_quickLinks.append(sec_quickLinks_h2, sec_quickLinks_ul);
+
+const sec_contact = document.createElement("div");
+sec_contact.classList.add("sec", "contact");
+
+const sec_contact_h2 = document.createElement("h2");
+sec_contact_h2.innerHTML = "Contact Info";
+
+const sec_contact_ul = document.createElement("ul");
+sec_contact_ul.setAttribute("class", "info");
+sec_contact_ul.innerHTML = `
+                      <li><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                          <span>647 Linda Street <br> Phoenixville, PA 191460,<br>USA</USA></span></li>
+                      <li><span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                          <p><a href="tel:12345678900">+1 234 567 8900</a><br>
+                          <a href="tel:12345678900">+1 234 567 8911</a></p></li>
+                      <li><span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                           <p><a href="mailto:Knowmore@gmail.com">Anime@gmail.com</a></p></li>`;
+sec_contact.append(sec_contact_h2, sec_contact_ul);
+
+// copyrightText
+const copyrightText = document.createElement("div");
+copyrightText.setAttribute("class", "copyrightText");
+copyrightText.innerHTML = ` <p>Copyright © 2021 <span class="copyright_name">Sangeetha.</span></p>`;
+
+footer_div_container.append(sec_about_us, sec_quickLinks, sec_contact);
+
+footer_tag.append(footer_div_container);
+
+footer_box.append(footer_tag, copyrightText);
+document.querySelector(".footer_container").append(footer_box);
 
 // ================================== Header Starts here ==================================
 // header script
