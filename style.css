@@ -149,6 +149,11 @@ body {
   opacity: 0;
   animation: slide_top 0.5s linear forwards;
   animation-delay: 2s;
+  transition: 0.8s;
+}
+.section_box_content .textBox a:hover {
+  background-color: #484848d6;
+  color: #f9f6f7;
 }
 .section_box_sci {
   position: absolute;
