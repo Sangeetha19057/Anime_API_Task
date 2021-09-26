@@ -110,9 +110,9 @@ function init() {
 init();
 
 // footer script
-const footer = document.createElement("footer");
-footer.setAttribute("id", "contact_us");
+const footer = document.createElement("div");
 footer.innerHTML = `
+<footer id="contact_us">
 <div class="container">
             <div class="sec aboutus">
                 <h2>About Us</h2>
@@ -137,12 +137,12 @@ footer.innerHTML = `
             </div>
             <div class="sec contact">
                 <h2>Contact Info</h2>
-                <ul class="info"> <li><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                <span>647 Linda Street <br> Phoenixville, PA 191460,<br>USA</USA></span> </li>
+                <ul class="info">
+                    <li> <span><i class="fa fa-map-marker" aria-hidden="true"></i></span> <span>647 Linda Street 
+                    <br> Phoenixville, PA 191460,<br>USA</USA></span> </li>
                     <li> <span><i class="fa fa-phone" aria-hidden="true"></i></span> <p><a href="tel:12345678900">+1 234 567 8900</a><br>
                           <a href="tel:12345678900">+1 234 567 8911</a></p> </li>
-                    <li><span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <p><a href="mailto:Knowmore@gmail.com">Anime@gmail.com</a></p></li>
+                    <li> <span><i class="fa fa-envelope" aria-hidden="true"></i></span><p><a href="mailto:Knowmore@gmail.com">Anime@gmail.com</a></p></li>
                 </ul>
             </div>
         </div>
@@ -157,7 +157,11 @@ document.querySelector(".footer_container").append(footer);
 const header_section = document.createElement("div");
 header_section.innerHTML = `
     <div class="section_box">
-       <img src="https://freepikpsd.com/media/2019/10/anime-transparent-gif-4-Free-PNG-Images-Transparent.png" alt="anime" class="mosque"/>
+       <img
+          src="https://freepikpsd.com/media/2019/10/anime-transparent-gif-4-Free-PNG-Images-Transparent.png"
+          alt="anime"
+          class="mosque"
+        />
         <!-- header starts here-->
         <div class="section_box_header">
           <a href="#" class="logo">Anime</a>
@@ -175,18 +179,16 @@ header_section.innerHTML = `
         <div class="section_box_content">
           <div class="textBox">
             <h2>Explore Anime</h2>
-            <p>
-              Find your favorite Anime watch the movie,Tv series and Special
-              episodes. Just a better place to watch anime in online for free!
-            </p>
+            <p> Find your favorite Anime watch the movie,Tv series and Special episodes. Just a better place to watch anime in online for free! </p>
             <a href="#search_anime">Search Anime</a>
           </div>
         </div>
         <ul class="section_box_sci">
-          <li><a href="#" style="--i: 12"><img src="images/facebook.png" alt="facebook_icon" /></a> </li>
+          <li><a href="#" style="--i: 12"><img src="images/facebook.png" alt="facebook_icon"/></a> </li>
           <li><a href="#" style="--i: 13" ><img src="images/twitter.png" alt="twitter_icon" /></a> </li>
-          <li> <a href="#" style="--i: 14"><img src="images/instagram.png" alt="instagram_icon"/></a></li>
+          <li><a href="#" style="--i: 14" ><img src="images/instagram.png" alt="instagram_icon" /></a> </li>
         </ul>
+
         <!-- content ends-->
           </div>
         `;
