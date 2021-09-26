@@ -1,8 +1,10 @@
 const apiurl = "https://api.jikan.moe/v3";
 
-//------------------------  Topnav anf from function  ----------------------
+//------------------------  Topnav and from function  ----------------------
 function Topnav_And_Form() {
   //navbar
+  const search_box_div = document.createElement("div");
+
   const search_title = document.createElement("div");
   search_title.setAttribute("class", "search_text");
   search_title.setAttribute("id", "search_anime");
@@ -12,8 +14,12 @@ function Topnav_And_Form() {
   search_heading.innerHTML = `<h2 class="titleText"><span>S</span>earch Anime</h2>`;
 
   search_title.append(search_heading);
-  document.querySelector(".form_container").append(search_title);
 
+  // search_box_div.append(search_title);
+
+  // document.querySelector(".form_container").append(search_title);
+  const form_box = document.createElement("div");
+  form_box.setAttribute("class", "form");
   const formdiv = document.createElement("div");
   formdiv.setAttribute("class", "conatiner");
   formdiv.innerHTML = `
@@ -21,8 +27,10 @@ function Topnav_And_Form() {
         <input type="text" name="search" id="search" placeholder="Enter anime name">
         <button type="button" onclick="searchAnime(event)">search</button>
      </form>`;
-
-  document.querySelector(".form").append(formdiv);
+  form_box.append(formdiv);
+  search_box_div.append(search_title, form_box);
+  // document.querySelector(".form").append(formdiv);
+  document.querySelector(".form_container").append(search_box_div);
 }
 Topnav_And_Form();
 //------------------------ searching Anime name in the search box ----------------------
@@ -54,9 +62,10 @@ async function getAnime(find) {
     document.querySelector(".image-container").innerHTML = "";
     displayAnime(initial_datas.results);
   } catch (err) {
+    console.log(err);
     document
       .querySelector(".image-container")
-      .append("Details Cannot be  Found. 😒");
+      .append(`Details Cannot be  Found. 😒`);
   }
 }
 //-------------------------- displayAnime  ---------------------------
@@ -86,6 +95,7 @@ function displayAnime(animes) {
   });
 }
 
+// loader script
 const loader_div = document.createElement("div");
 loader_div.setAttribute("class", "loader");
 const loader_image = document.createElement("img");
@@ -110,6 +120,7 @@ function init() {
 }
 init();
 
+// ================================== Footer Starts here ==================================
 // footer script
 const footer_box = document.createElement("div");
 
@@ -182,11 +193,10 @@ copyrightText.setAttribute("class", "copyrightText");
 copyrightText.innerHTML = ` <p>Copyright © 2021 <span class="copyright_name">Sangeetha.</span></p>`;
 
 footer_div_container.append(sec_about_us, sec_quickLinks, sec_contact);
-
 footer_tag.append(footer_div_container);
-
 footer_box.append(footer_tag, copyrightText);
 document.querySelector(".footer_container").append(footer_box);
+// ================================== Footer endss here ==================================
 
 // ================================== Header Starts here ==================================
 // header script
@@ -237,18 +247,10 @@ const content_textBox_h2 = document.createElement("h2");
 content_textBox_h2.innerHTML = "Explore Anime";
 
 const content_textBox_p = document.createElement("p");
-content_textBox_p.innerHTML =
-  "Find your favorite Anime watch the movie,Tv series and Special episodes. Just a better place to watch anime in online for free!";
-
-const content_textBox_a = document.createElement("a");
-content_textBox_a.setAttribute("id", "#search_anime");
-content_textBox_a.innerHTML = "Search Anime";
-
-content_textBox.append(
-  content_textBox_h2,
-  content_textBox_p,
-  content_textBox_a
-);
+content_textBox_p.innerHTML = `            
+<p>Find your favorite Anime watch the movie,Tv series and Special episodes. Just a better place to watch anime in online for free!</p>
+<a href="#search_anime">Search Anime</a>`;
+content_textBox.append(content_textBox_h2, content_textBox_p);
 section_box_content.append(content_textBox);
 
 // creating header icons
@@ -286,146 +288,84 @@ search_title.setAttribute("id", "popular_anime");
 
 const search_heading = document.createElement("div");
 search_heading.setAttribute("class", "title");
-search_heading.innerHTML = `<h2 class="titleText"><span>P</span>opular Anime Images</h2>`;
+search_heading.innerHTML = `<h2 class="titleText"><span>P</span>opular Anime Characters</h2>`;
 
 search_title.append(search_heading);
-document.querySelector(".image_container").append(search_title);
+document.querySelector(".anime_image_container").append(search_title);
 
 const image_box = document.createElement("div");
 image_box.setAttribute("class", "container-for-image");
 image_box.innerHTML = `
         <div class="image-conatiner">
-          <!-- image box -->
+        
           <div class="image">
-            <img
-              src="images/img-1.jpeg"
-              alt="image"
-            />
-            <!-- image box icon -->
+             <img src="images/img-1.jpeg" alt="image"/>
             <div class="anime_name">
-              <span>
-                <p class="gallery-text">Pokemon</p>
-              </span>
+              <span> <p class="gallery-text">Pokemon</p></span>
             </div>
             <div class="text-image">
-              <span>
-                <!-- view icon -->
-                <i class="fa fa-eye" aria-hidden="true"></i>
-              </span>
+              <span><i class="fa fa-eye" aria-hidden="true"></i></span>
             </div>
           </div>
-          <div class="image">
-            <img
-              src="images/img-2.jpeg"
-              alt="image"
-            />
-            <!-- image box icon -->
-            <div class="anime_name">
-              <span>
-                <p class="gallery-text">Rockman</p>
-              </span>
-            </div>
-            <div class="text-image">
-              <span>
-                <!-- view icon -->
-                <i class="fa fa-eye" aria-hidden="true"></i>
-              </span>
-            </div>
-          </div>
-          <!-- image box Ends here  -->
 
-          <!-- image box starts -->
           <div class="image">
-            <img
-              src="https://wallpaperaccess.com/full/2410080.jpg"
-              alt="image"
-            />
-            <!-- image box icon -->
+            <img src="images/img-2.jpeg" alt="image" />
+ 
             <div class="anime_name">
-              <span>
-                <p class="gallery-text">Naruto</p>
-              </span>
+              <span> <p class="gallery-text">Rockman</p></span>
             </div>
             <div class="text-image">
-              <span>
-                <!-- view icon -->
-                <i class="fa fa-eye" aria-hidden="true"></i>
-              </span>
+              <span><i class="fa fa-eye" aria-hidden="true"></i></span>
             </div>
           </div>
-          <!-- image box Ends here  -->
 
-          <!-- image box starts -->
           <div class="image">
-            <img
-              src="images/img-4.jpeg"
-              alt="Akeno_image"
-            />
-            <!-- image box icon -->
+            <img src="https://wallpaperaccess.com/full/2410080.jpg" alt="image"/>
+
             <div class="anime_name">
-              <span>
-                <p class="gallery-text">Akeno</p>
-              </span>
+              <span><p class="gallery-text">Naruto</p></span>
             </div>
             <div class="text-image">
-              <span>
-                <!-- view icon -->
-                <i class="fa fa-eye" aria-hidden="true"></i>
-              </span>
+              <span><i class="fa fa-eye" aria-hidden="true"></i></span>
             </div>
           </div>
-          <!-- image box Ends here  -->
 
-          <!-- image box starts -->
           <div class="image">
-            <img
-              src="images/img-5.jpeg"
-              alt="image"
-            />
-            <!-- image box icon -->
+          <img src="images/img-4.jpeg" alt="Akeno_image"/>
             <div class="anime_name">
-              <span>
-                <p class="gallery-text">Ami</p>
-              </span>
+              <span> <p class="gallery-text">Levi</p> </span>
             </div>
             <div class="text-image">
-              <span>
-                <!-- view icon -->
-                <i class="fa fa-eye" aria-hidden="true"></i>
-              </span>
+              <span><i class="fa fa-eye" aria-hidden="true"></i> </span>
             </div>
           </div>
-          <!-- image box Ends here  -->
 
-          <!-- image box starts -->
           <div class="image">
-            <img
-              src="images/img-6.jpeg"
-              alt="Katsu-image"
-            />
+            <img src="https://i.pinimg.com/originals/a3/92/02/a39202354e922612924457b1b53b372a.jpg"  alt="image"/>
 
-            <!-- image box icon -->
             <div class="anime_name">
-              <span>
-                <p class="gallery-text">Katsu</p>
-              </span>
+              <span> <p class="gallery-text">Goku</p> </span>
             </div>
             <div class="text-image">
-              <span>
-                <!-- view icon -->
-                <i class="fa fa-eye" aria-hidden="true"></i>
-              </span>
+              <span>  <i class="fa fa-eye" aria-hidden="true"></i>  </span>
             </div>
           </div>
-          <!-- image box Ends here  -->
+
+          <div class="image">
+            <img src="images/img-6.jpeg"  alt="Katsu-image"  />
+
+            <div class="anime_name">
+              <span> <p class="gallery-text">Katsu</p> </span>
+            </div>
+            <div class="text-image">
+              <span> <i class="fa fa-eye" aria-hidden="true"></i>  </span>
+            </div>
+          </div>
         </div>
 
         <div class="popup-image">
           <span>&times</span>
-          <img
-            src="https://www.reference.com/content/419749/ed9e49f85d8f405be924a7474dd4af54.jpg"
-            alt=""
-          />
+          <img src="https://www.reference.com/content/419749/ed9e49f85d8f405be924a7474dd4af54.jpg" alt=""  />
         </div>
       </div>
 `;
