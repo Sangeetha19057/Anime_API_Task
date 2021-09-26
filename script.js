@@ -112,6 +112,7 @@ init();
 
 // footer script
 const footer = document.createElement("div");
+// const footer_box=document.cre
 footer.innerHTML = `
 <footer id="contact_us">
 <div class="container">
@@ -162,59 +163,86 @@ footer.innerHTML = `
 `;
 document.querySelector(".footer_container").append(footer);
 
+// ================================== Header Starts here ==================================
 // header script
 const header_section = document.createElement("div");
-header_section.innerHTML = `
-    <div class="section_box">
-       <img
-          src="images/anime_girl.png"
-          alt="anime"
-          class="mosque"
-        />
-        <!-- header starts here-->
-        <div class="section_box_header">
-          <a href="#" class="logo">Anime</a>
-          <div class="navbar_toggle"></div>
-          <ul class="navigation">
+
+const section_box = document.createElement("div");
+section_box.setAttribute("class", "section_box");
+
+// section_box_for image
+const section_box_image = document.createElement("img");
+section_box_image.setAttribute("src", "images/anime_girl.png");
+section_box_image.setAttribute("alt", "anime_girl_image");
+section_box_image.setAttribute("class", "mosque");
+
+// creating setion_box header div
+const section_box_header = document.createElement("div");
+section_box_header.setAttribute("class", "section_box_header");
+
+// creating setion_box header with a tag
+const section_box_header_a = document.createElement("a");
+section_box_header_a.setAttribute("class", "logo");
+section_box_header_a.innerHTML = "Anime";
+
+// creating navbar_toggle
+const navbar_toggle = document.createElement("div");
+navbar_toggle.setAttribute("class", "navbar_toggle");
+
+const navigation_ul = document.createElement("ul");
+navigation_ul.setAttribute("class", "navigation");
+navigation_ul.innerHTML = `
             <li><a href="#" style="--i: 1" class="active">Home</a></li>
             <li><a href="#search_anime" style="--i: 2">Search Anime</a></li>
             <li><a href="#contact_us" style="--i: 3">Contact Us</a></li>
             <li><a href="#popular_anime" style="--i: 4">Popular Anime</a></li>
-          </ul>
-        </div>
-        <!-- header Ends here -->
-        <!-- content starts -->
-        <div class="section_box_content">
-          <div class="textBox">
-            <h2>Explore Anime</h2>
-            <p>
-              Find your favorite Anime watch the movie,Tv series and Special
-              episodes. Just a better place to watch anime in online for free!
-            </p>
-            <a href="#search_anime">Search Anime</a>
-          </div>
-        </div>
-        <ul class="section_box_sci">
-          <li>
-            <a href="#" style="--i: 12"
-              ><img src="images/facebook.png" alt="facebook_icon"
-            /></a>
-          </li>
-          <li>
-            <a href="#" style="--i: 13"
-              ><img src="images/twitter.png" alt="twitter_icon"
-            /></a>
-          </li>
-          <li>
-            <a href="#" style="--i: 14"
-              ><img src="images/instagram.png" alt="instagram_icon"
-            /></a>
-          </li>
-        </ul>
+            `;
+section_box_header.append(section_box_header_a, navbar_toggle, navigation_ul);
+// header Ends here
 
-        <!-- content ends-->
-          </div>
-        `;
+// header content starts here
+const section_box_content = document.createElement("div");
+section_box_content.setAttribute("class", "section_box_content");
+
+// content textbox
+const content_textBox = document.createElement("div");
+content_textBox.setAttribute("class", "textBox");
+
+const content_textBox_h2 = document.createElement("h2");
+content_textBox_h2.innerHTML = "Explore Anime";
+
+const content_textBox_p = document.createElement("p");
+content_textBox_p.innerHTML =
+  "Find your favorite Anime watch the movie,Tv series and Special episodes. Just a better place to watch anime in online for free!";
+
+const content_textBox_a = document.createElement("a");
+content_textBox_a.setAttribute("id", "#search_anime");
+content_textBox_a.innerHTML = "Search Anime";
+
+content_textBox.append(
+  content_textBox_h2,
+  content_textBox_p,
+  content_textBox_a
+);
+section_box_content.append(content_textBox);
+
+// creating header icons
+const section_box_sci = document.createElement("ul");
+section_box_sci.setAttribute("class", "section_box_sci");
+section_box_sci.innerHTML = `
+          <li> <a href="#" style="--i: 12"><img src="images/facebook.png" alt="facebook_icon"/></a></li>
+          <li><a href="#" style="--i: 13" ><img src="images/twitter.png" alt="twitter_icon"/></a></li>
+          <li><a href="#" style="--i: 14"><img src="images/instagram.png" alt="instagram_icon"/></a></li>`;
+
+// header content Ends here
+
+section_box.append(
+  section_box_image,
+  section_box_header,
+  section_box_content,
+  section_box_sci
+);
+header_section.append(section_box);
 document.querySelector(".header_container").append(header_section);
 
 //header toggle script
@@ -224,9 +252,9 @@ menutoggle.onclick = function () {
   menutoggle.classList.toggle("active");
   navigation.classList.toggle("active");
 };
+// ================================== Header ends here ==================================
 
 // popular anime images gallery
-
 const search_title = document.createElement("div");
 search_title.setAttribute("class", "search_text");
 search_title.setAttribute("id", "popular_anime");
