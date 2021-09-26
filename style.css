@@ -250,13 +250,14 @@ body {
   .section_box_header .navigation {
     display: none;
   }
+
   .section_box_header .navigation.active {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: #fff;
+    height: 55%;
+    background-color: #2e2e2ee6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,6 +269,7 @@ body {
   .section_box_header ul li a {
     margin-left: 0;
     font-size: 1.5em;
+    color: #fff;
   }
   .navbar_toggle {
     position: fixed;
@@ -583,6 +585,123 @@ button:hover {
     margin-left: 0px;
   }
 }
+/* anime gallery style starts here */
+.container-for-image {
+  position: relative;
+  /* min-height: 100vh;
+        background-color: #ddd; */
+}
+
+.container-for-image h1 {
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  padding: 15px;
+  color: #333;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.container-for-image .image-conatiner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.container-for-image .image-conatiner .image {
+  height: 250px;
+  width: 350px;
+  border: 10px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.container-for-image .image-conatiner .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.7s linear;
+}
+
+.container-for-image .image-conatiner .image:hover img {
+  transform: scale(1.1);
+}
+
+.container-for-image .popup-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(37, 28, 28, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  display: none;
+}
+
+.container-for-image .popup-image span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.container-for-image .popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #fff;
+  border-radius: 5px;
+  width: 750px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .container-for-image .popup-image img {
+    width: 90%;
+  }
+}
+.text-image {
+  position: absolute;
+  width: 40px;
+  background-color: rgba(16, 17, 17, 0.498);
+  top: 2;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.text-image span {
+  font-size: 20px;
+  color: #fff;
+}
+
+.text-image span .fa-eye {
+  padding-top: 5px;
+  color: #fff;
+}
+
+.anime_name {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(16, 17, 17, 0.498);
+  bottom: 0;
+  padding: 10px;
+}
+.anime_name span {
+  font-size: 20px;
+  color: rgb(245, 245, 248);
+}
+/* anime gallery style ends here */
 /* footer styles starts */
 /* footer style starts */
 footer {
