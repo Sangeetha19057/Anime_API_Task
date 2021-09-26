@@ -245,7 +245,7 @@ image_box.innerHTML = `
           <!-- image box -->
           <div class="image">
             <img
-              src="https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/jd2eawyghjaghvgu_1614153175.jpeg"
+              src="images/img-1.jpeg"
               alt="image"
             />
             <!-- image box icon -->
@@ -263,7 +263,7 @@ image_box.innerHTML = `
           </div>
           <div class="image">
             <img
-              src="https://i.pinimg.com/originals/d8/e7/ab/d8e7ab0316aac881c4bf55a95bf0f06c.jpg"
+              src="images/img-2.jpeg"
               alt="image"
             />
             <!-- image box icon -->
@@ -305,7 +305,7 @@ image_box.innerHTML = `
           <!-- image box starts -->
           <div class="image">
             <img
-              src="https://w0.peakpx.com/wallpaper/423/823/HD-wallpaper-akeno-misaki-anime-blue-eyes-high-school-fleet-blue-sky-blushing-misaki-clouds-big-eyes-akeno-sailor-uniform-anime-girl-petals.jpg"
+              src="images/img-4.jpeg"
               alt="Akeno_image"
             />
             <!-- image box icon -->
@@ -326,7 +326,7 @@ image_box.innerHTML = `
           <!-- image box starts -->
           <div class="image">
             <img
-              src="https://c4.wallpaperflare.com/wallpaper/143/246/353/anime-toradora-ami-kawashima-hd-wallpaper-preview.jpg"
+              src="images/img-5.jpeg"
               alt="image"
             />
             <!-- image box icon -->
@@ -347,8 +347,8 @@ image_box.innerHTML = `
           <!-- image box starts -->
           <div class="image">
             <img
-              src="https://w0.peakpx.com/wallpaper/909/793/HD-wallpaper-deidara-explode-katsu.jpg"
-              alt="image"
+              src="images/img-6.jpeg"
+              alt="Katsu-image"
             />
 
             <!-- image box icon -->
