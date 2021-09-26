@@ -21,7 +21,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   overflow-x: hidden;
-  background-image: url("https://lesencres.com/wp-content/uploads/2018/10/teal-watercolor-background-texture.jpg");
+  background-image: url("images/bg.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -287,7 +287,7 @@ body {
 }
 /* sectionn header style Ends */
 .form {
-  background-image: url("https://images2.alphacoders.com/677/677820.jpg");
+  background-image: url("images/anime_bg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
