@@ -13,6 +13,7 @@ function Topnav_And_Form() {
 
   search_title.append(search_heading);
   document.querySelector(".form_container").append(search_title);
+
   const formdiv = document.createElement("div");
   formdiv.setAttribute("class", "conatiner");
   formdiv.innerHTML = `
@@ -138,11 +139,19 @@ footer.innerHTML = `
             <div class="sec contact">
                 <h2>Contact Info</h2>
                 <ul class="info">
-                    <li> <span><i class="fa fa-map-marker" aria-hidden="true"></i></span> <span>647 Linda Street 
-                    <br> Phoenixville, PA 191460,<br>USA</USA></span> </li>
-                    <li> <span><i class="fa fa-phone" aria-hidden="true"></i></span> <p><a href="tel:12345678900">+1 234 567 8900</a><br>
-                          <a href="tel:12345678900">+1 234 567 8911</a></p> </li>
-                    <li> <span><i class="fa fa-envelope" aria-hidden="true"></i></span><p><a href="mailto:Knowmore@gmail.com">Anime@gmail.com</a></p></li>
+                    <li>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span>647 Linda Street <br> Phoenixville, PA 191460,<br>USA</USA></span>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                       <p><a href="tel:12345678900">+1 234 567 8900</a><br>
+                          <a href="tel:12345678900">+1 234 567 8911</a></p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <p><a href="mailto:Knowmore@gmail.com">Anime@gmail.com</a></p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -170,8 +179,7 @@ header_section.innerHTML = `
             <li><a href="#" style="--i: 1" class="active">Home</a></li>
             <li><a href="#search_anime" style="--i: 2">Search Anime</a></li>
             <li><a href="#contact_us" style="--i: 3">Contact Us</a></li>
-            <li><a href="#" style="--i: 4">Watch</a></li>
-            <li><a href="#" style="--i: 5">About</a></li>
+            <li><a href="#popular_anime" style="--i: 4">Popular Anime</a></li>
           </ul>
         </div>
         <!-- header Ends here -->
@@ -179,14 +187,29 @@ header_section.innerHTML = `
         <div class="section_box_content">
           <div class="textBox">
             <h2>Explore Anime</h2>
-            <p> Find your favorite Anime watch the movie,Tv series and Special episodes. Just a better place to watch anime in online for free! </p>
+            <p>
+              Find your favorite Anime watch the movie,Tv series and Special
+              episodes. Just a better place to watch anime in online for free!
+            </p>
             <a href="#search_anime">Search Anime</a>
           </div>
         </div>
         <ul class="section_box_sci">
-          <li><a href="#" style="--i: 12"><img src="images/facebook.png" alt="facebook_icon"/></a> </li>
-          <li><a href="#" style="--i: 13" ><img src="images/twitter.png" alt="twitter_icon" /></a> </li>
-          <li><a href="#" style="--i: 14" ><img src="images/instagram.png" alt="instagram_icon" /></a> </li>
+          <li>
+            <a href="#" style="--i: 12"
+              ><img src="images/facebook.png" alt="facebook_icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#" style="--i: 13"
+              ><img src="images/twitter.png" alt="twitter_icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#" style="--i: 14"
+              ><img src="images/instagram.png" alt="instagram_icon"
+            /></a>
+          </li>
         </ul>
 
         <!-- content ends-->
@@ -200,4 +223,168 @@ const navigation = document.querySelector(".navigation");
 menutoggle.onclick = function () {
   menutoggle.classList.toggle("active");
   navigation.classList.toggle("active");
+};
+
+// popular anime images gallery
+
+const search_title = document.createElement("div");
+search_title.setAttribute("class", "search_text");
+search_title.setAttribute("id", "popular_anime");
+
+const search_heading = document.createElement("div");
+search_heading.setAttribute("class", "title");
+search_heading.innerHTML = `<h2 class="titleText"><span>P</span>opular Anime Images</h2>`;
+
+search_title.append(search_heading);
+document.querySelector(".image_container").append(search_title);
+
+const image_box = document.createElement("div");
+image_box.setAttribute("class", "container-for-image");
+image_box.innerHTML = `
+        <div class="image-conatiner">
+          <!-- image box -->
+          <div class="image">
+            <img
+              src="https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/jd2eawyghjaghvgu_1614153175.jpeg"
+              alt="image"
+            />
+            <!-- image box icon -->
+            <div class="anime_name">
+              <span>
+                <p class="gallery-text">Pokemon</p>
+              </span>
+            </div>
+            <div class="text-image">
+              <span>
+                <!-- view icon -->
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="https://i.pinimg.com/originals/d8/e7/ab/d8e7ab0316aac881c4bf55a95bf0f06c.jpg"
+              alt="image"
+            />
+            <!-- image box icon -->
+            <div class="anime_name">
+              <span>
+                <p class="gallery-text">Rockman</p>
+              </span>
+            </div>
+            <div class="text-image">
+              <span>
+                <!-- view icon -->
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <!-- image box Ends here  -->
+
+          <!-- image box starts -->
+          <div class="image">
+            <img
+              src="https://wallpaperaccess.com/full/2410080.jpg"
+              alt="image"
+            />
+            <!-- image box icon -->
+            <div class="anime_name">
+              <span>
+                <p class="gallery-text">Naruto</p>
+              </span>
+            </div>
+            <div class="text-image">
+              <span>
+                <!-- view icon -->
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <!-- image box Ends here  -->
+
+          <!-- image box starts -->
+          <div class="image">
+            <img
+              src="https://w0.peakpx.com/wallpaper/423/823/HD-wallpaper-akeno-misaki-anime-blue-eyes-high-school-fleet-blue-sky-blushing-misaki-clouds-big-eyes-akeno-sailor-uniform-anime-girl-petals.jpg"
+              alt="Akeno_image"
+            />
+            <!-- image box icon -->
+            <div class="anime_name">
+              <span>
+                <p class="gallery-text">Akeno</p>
+              </span>
+            </div>
+            <div class="text-image">
+              <span>
+                <!-- view icon -->
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <!-- image box Ends here  -->
+
+          <!-- image box starts -->
+          <div class="image">
+            <img
+              src="https://c4.wallpaperflare.com/wallpaper/143/246/353/anime-toradora-ami-kawashima-hd-wallpaper-preview.jpg"
+              alt="image"
+            />
+            <!-- image box icon -->
+            <div class="anime_name">
+              <span>
+                <p class="gallery-text">Ami</p>
+              </span>
+            </div>
+            <div class="text-image">
+              <span>
+                <!-- view icon -->
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <!-- image box Ends here  -->
+
+          <!-- image box starts -->
+          <div class="image">
+            <img
+              src="https://w0.peakpx.com/wallpaper/909/793/HD-wallpaper-deidara-explode-katsu.jpg"
+              alt="image"
+            />
+
+            <!-- image box icon -->
+            <div class="anime_name">
+              <span>
+                <p class="gallery-text">Katsu</p>
+              </span>
+            </div>
+            <div class="text-image">
+              <span>
+                <!-- view icon -->
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+          <!-- image box Ends here  -->
+        </div>
+
+        <div class="popup-image">
+          <span>&times</span>
+          <img
+            src="https://www.reference.com/content/419749/ed9e49f85d8f405be924a7474dd4af54.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+`;
+document.querySelector(".anime_image_container").append(image_box);
+
+// anime gallery script
+document.querySelectorAll(".image-conatiner img").forEach((image) => {
+  image.onclick = () => {
+    document.querySelector(".popup-image").style.display = "block";
+    document.querySelector(".popup-image img").src = image.getAttribute("src");
+  };
+});
+document.querySelector(".popup-image span").onclick = () => {
+  document.querySelector(".popup-image").style.display = "none";
 };
